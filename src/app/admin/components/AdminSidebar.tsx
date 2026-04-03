@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, ShoppingBag, Grid2X2, Settings, LogOut } from "lucide-react";
+import { LayoutDashboard, ShoppingBag, Grid2X2, Settings, LogOut, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { createClient } from "@/utils/supabase/client";
 import { useRouter } from "next/navigation";
@@ -14,7 +14,7 @@ const items = [
   { name: "الإعدادات", href: "/admin/settings", icon: Settings },
 ];
 
-export default function AdminSidebar() {
+export default function AdminSidebar({ onMobileSelect }: { onMobileSelect?: () => void }) {
   const pathname = usePathname();
   const router = useRouter();
   const supabase = createClient();
@@ -26,7 +26,17 @@ export default function AdminSidebar() {
   };
 
   return (
-    <aside className="w-64 bg-zinc-950 text-slate-300 border-l border-zinc-900 flex-shrink-0 relative overflow-hidden hidden md:flex flex-col z-20">
+    <aside className="w-full md:w-64 bg-zinc-950 text-slate-300 border-l border-zinc-900 flex-shrink-0 relative h-full flex flex-col z-20">
+      {/* Mobile Close Button */}
+      {onMobileSelect && (
+        <button 
+          onClick={onMobileSelect}
+          className="absolute left-4 top-5 p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white md:hidden"
+        >
+          <X className="w-5 h-5" />
+        </button>
+      )}
+
       {/* Subtle top glow */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-50" />
       
@@ -48,6 +58,7 @@ export default function AdminSidebar() {
             <Link
               key={item.href}
               href={item.href}
+              onClick={onMobileSelect}
               className={cn(
                 "relative flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-300 group text-sm font-medium",
                 isActive 
