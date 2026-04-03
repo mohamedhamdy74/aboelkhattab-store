@@ -4,6 +4,9 @@ import "@/app/globals.css";
 export const metadata: Metadata = {
   title: "أبو الخطاب للعطور",
   description: "المتجر الرسمي لمنتجات أبو الخطاب للعطور وبخور",
+  icons: {
+    icon: "/images/logo.jpg",
+  },
 };
 
 export default function RootLayout({
