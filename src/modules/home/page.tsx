@@ -1,0 +1,41 @@
+import Hero from "./components/Hero";
+import About from "./components/About";
+import FeaturedProducts from "./components/FeaturedProducts";
+import Categories from "./components/Categories";
+import Bridal from "./components/Bridal";
+import Reviews from "./components/Reviews";
+
+import { prisma } from "@/lib/prisma";
+
+export default async function HomeModule() {
+  const [categories, latestProducts] = await Promise.all([
+    prisma.category.findMany({
+      where: { isActive: true },
+      orderBy: { createdAt: 'desc' },
+      take: 6,
+    }),
+    prisma.product.findMany({
+      where: { isActive: true },
+      include: {
+        category: true,
+        variants: {
+          orderBy: { price: 'asc' },
+          take: 1
+        }
+      },
+      orderBy: { createdAt: 'desc' },
+      take: 4,
+    }),
+  ]);
+
+  return (
+    <main className="min-h-dvh bg-black w-full overflow-hidden">
+      <Hero />
+      <About />
+      <FeaturedProducts products={latestProducts} />
+      <Categories categories={categories} />
+      <Bridal />
+      <Reviews />
+    </main>
+  );
+}

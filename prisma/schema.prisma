@@ -1,0 +1,75 @@
+// Prisma Schema - مشروع أبو الخطاب للعطور
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+}
+
+// ==========================================
+// 1. الأقسام
+// ==========================================
+model Category {
+  id        String    @id @default(cuid())
+  nameAr        String
+  nameEn        String
+  descriptionAr String?   @db.Text
+  descriptionEn String?   @db.Text
+  image         String?   
+  isActive  Boolean   @default(true) 
+  
+  products  Product[]
+  
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+// ==========================================
+// 2. المنتجات
+// ==========================================
+model Product {
+  id             String           @id @default(cuid())
+  nameAr         String
+  nameEn         String
+  descriptionAr  String?          @db.Text
+  descriptionEn  String?          @db.Text
+  image          String           
+  images         String[]         
+  
+
+  
+  isActive       Boolean          @default(true)
+  
+  categoryId     String
+  category       Category         @relation(fields: [categoryId], references: [id], onDelete: Restrict) 
+  
+  variants       ProductVariant[] 
+  
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+
+  @@index([categoryId])
+}
+
+// ==========================================
+// 3. الأحجام والأسعار (Variants)
+// ==========================================
+model ProductVariant {
+  id        String   @id @default(cuid())
+  
+  sizeAr    String   
+  sizeEn    String   
+  
+  price     Float    
+  oldPrice  Float?   
+  
+  stock     Int      @default(0) 
+  isDefault Boolean  @default(false) 
+  
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+}

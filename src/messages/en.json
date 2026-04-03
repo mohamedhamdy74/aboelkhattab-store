@@ -1,0 +1,109 @@
+{
+  "home": {
+    "brand": "Abu Alkhattab",
+    "title": "Abu Alkhattab Perfumes",
+    "subtitle": "Perfumes inspired by the South for over 15 years",
+    "orderNow": "Order Now",
+    "contactUs": "Contact Us",
+    "browseProducts": "Browse Products",
+    "categoriesTitle": "Quick Categories",
+    "categories": {
+      "khomra": "Al-Khomra",
+      "incense": "Incense",
+      "makhmaryat": "Makhmaryat",
+      "dilka": "Dilka",
+      "mist": "Hair & Body Mist",
+      "bridal": "Bridal Preparations"
+    },
+    "about": {
+      "title": "About Us",
+      "p1": "\"Abu Alkhattab Perfumes - Inspired by the South\" is the first Nubian brand specializing in crafting all types of Khomra, incense, dilka, and high-quality imported aromatic products.",
+      "p2": "Over 15 years of experience, by the grace of God. Every product is handmade from our hearts to yours. May you always be fragranced in your homes.",
+      "stats": {
+        "experience": "+15 Years Exp.",
+        "quality": "Imported Quality",
+        "handmade": "Handmade with Love"
+      }
+    },
+    "featured": {
+      "title": "Latest Products",
+      "subtitle": "Discover our exclusive collection of the most luxurious perfumes and Khomra crafted for you.",
+      "viewAll": "View All Products",
+      "addToCart": "Add to Cart",
+      "currency": "EGP"
+    },
+    "bridal": {
+      "title": "Bridal Packages",
+      "subtitle": "Exclusive preparations for your special night by Om Abdulrahman Alkhattab",
+      "currency": "EGP",
+      "inquire": "Inquire via WhatsApp",
+      "groups": {
+        "g1": {
+          "title": "First Bridal Package",
+          "price": "6700",
+          "features": [
+            "6 types of Khomra in 1/4 kg bottles of your choice.",
+            "Half kg jar of imported premium Sandalwood incense.",
+            "Small jar of perfumed Mahlab Dilka of your choice.",
+            "Bridal Gift."
+          ]
+        },
+        "g2": {
+          "title": "Second Bridal Package",
+          "price": "8200",
+          "features": [
+            "6 types of Khomra in 1/4 kg bottles of your choice.",
+            "1 kg jar of imported premium Sandalwood incense.",
+            "Large jar of perfumed Mahlab Dilka of your choice.",
+            "Bridal Gift."
+          ]
+        },
+        "g3": {
+          "title": "Third Bridal Package",
+          "price": "13200",
+          "features": [
+            "Higher than the second package.",
+            "Can upgrade to 1/2 kg bottles instead of 1/4 kg.",
+            "Increase the amount of Incense, Khomra, and Dilka."
+          ]
+        }
+      }
+    },
+    "reviews": {
+      "title": "Customer Reviews",
+      "subtitle": "We are proud of your trust. See what our valued customers say about our premium products."
+    },
+    "footer": {
+      "title": "Abu Alkhattab Perfumes",
+      "desc": "The first Nubian brand specialized in crafting high-quality Khomra and incense.",
+      "contact": "Contact Us",
+      "importantNotice": "⚠️ We do not have any other branches or points of sale.",
+      "hours": "Working Hours:",
+      "branchesTitle": "Our Branches",
+      "branches": {
+        "b1": {
+          "name": "First Branch (Kalabsha)",
+          "address": "Aswan - Kalabsha City - on Kalabsha station platform.",
+          "time": "9 AM to 10 PM"
+        },
+        "b2": {
+          "name": "Second Branch (Aswan)",
+          "address": "Aswan - Plaza Mall - Nile Corniche - First Upper Floor next to Mall Management office.",
+          "time": "11 AM to 10 PM"
+        },
+        "b3": {
+          "name": "Third Branch (Cairo)",
+          "address": "Cairo - 38 Abu Bakr El Seddiq St. next to Mina Schools, El Tawabeq, Faisal (with Mrs. Abeer Qatta).",
+          "phones": "01115070323 | 01555546317 | 01009334385",
+          "time": "11 AM to 10 PM"
+        },
+        "b4": {
+          "name": "Fourth Branch (Nasr Al Nuba)",
+          "address": "Aswan - Nasr Al Nuba - next to Nasser Social Bank - behind Teachers Syndicate.",
+          "time": "10 AM to 11 PM"
+        }
+      },
+      "rights": "All rights reserved © {year} Abu Alkhattab Perfumes."
+    }
+  }
+}
