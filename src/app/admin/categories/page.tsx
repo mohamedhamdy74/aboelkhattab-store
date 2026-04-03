@@ -52,7 +52,7 @@ export default async function CategoriesPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800/60">
-                {categories.map((cat) => (
+                {categories.map((cat: any) => (
                   <tr key={cat.id} className="hover:bg-zinc-50/60 dark:hover:bg-zinc-800/30 transition-colors group">
                     {/* القسم */}
                     <td className="px-6 py-4">

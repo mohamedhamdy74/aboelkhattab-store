@@ -56,7 +56,7 @@ export default async function ProductsPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800/60">
-                {products.map((prod) => (
+                {products.map((prod: any) => (
                   <tr key={prod.id} className="hover:bg-zinc-50/60 dark:hover:bg-zinc-800/30 transition-colors group">
                     {/* المنتج */}
                     <td className="px-6 py-4">
@@ -89,7 +89,7 @@ export default async function ProductsPage() {
                       </div>
                       {prod.variants.length > 0 && (
                         <p className="text-[11px] text-zinc-500 mt-1">
-                          السعر يبدأ من: <span className="font-bold text-indigo-600 dark:text-indigo-400">{Math.min(...prod.variants.map((v) => v.price))} ج.م</span>
+                          السعر يبدأ من: <span className="font-bold text-indigo-600 dark:text-indigo-400">{Math.min(...prod.variants.map((v: any) => v.price))} ج.م</span>
                         </p>
                       )}
                     </td>
