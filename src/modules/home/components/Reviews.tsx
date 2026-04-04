@@ -55,7 +55,7 @@ export default function Reviews() {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-          
+
           {/* Left Column: Title and Trust Indicators */}
           <motion.div
             initial={{ opacity: 0, x: locale === "ar" ? 20 : -20 }}
@@ -67,20 +67,20 @@ export default function Reviews() {
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-8 font-cairo leading-tight">
               {t("title")}
             </h2>
-            
+
             <p className="text-zinc-400 text-lg md:text-2xl font-medium leading-relaxed mb-10 max-w-xl">
               {t("subtitle")}
             </p>
 
             {/* Navigation Arrows for Desktop (Lateral) - Forced LTR to keep icons pointing outward */}
             <div className="hidden lg:flex items-center gap-6 mt-16" dir="ltr">
-              <button 
+              <button
                 onClick={prevSlide}
                 className="p-5 rounded-full bg-zinc-900 border border-white/5 text-white hover:bg-yellow-500 hover:text-black transition-all duration-300 shadow-2xl active:scale-90 group"
               >
                 <ChevronLeft size={28} className="transition-transform group-hover:-translate-x-1" />
               </button>
-              <button 
+              <button
                 onClick={nextSlide}
                 className="p-5 rounded-full bg-zinc-900 border border-white/5 text-white hover:bg-yellow-500 hover:text-black transition-all duration-300 shadow-2xl active:scale-90 group"
               >
@@ -115,42 +115,41 @@ export default function Reviews() {
                     className="object-contain w-full h-full p-4 md:p-12"
                     priority
                   />
-                  
+
                   {/* Decorative element */}
                   <div className="absolute top-8 right-8 text-yellow-500/20 pointer-events-none opacity-30">
                     <Quote size={80} />
                   </div>
                 </motion.div>
               </AnimatePresence>
-              
+
               {/* Floating Mobile Controls overlay - Forced LTR for outward arrows */}
               <div className="absolute inset-x-0 bottom-12 flex justify-center lg:hidden px-6 gap-6" dir="ltr">
-                <button 
-                  onClick={prevSlide}
+                <button
+                  onClick={nextSlide}
                   className="p-4 rounded-full bg-black/60 border border-white/10 text-white backdrop-blur-xl shadow-2xl active:scale-90"
                 >
                   <ChevronLeft size={24} />
                 </button>
-                <button 
-                  onClick={nextSlide}
+                <button
+                  onClick={prevSlide}
                   className="p-4 rounded-full bg-black/60 border border-white/10 text-white backdrop-blur-xl shadow-2xl active:scale-90"
                 >
                   <ChevronRight size={24} />
                 </button>
               </div>
             </div>
-            
+
             {/* Dots / Indicators */}
             <div className="flex justify-center lg:justify-start gap-2.5 mt-8 px-4 ltr:lg:justify-end rtl:lg:justify-end">
               {images.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setIndex(i)}
-                  className={`h-1.5 rounded-full transition-all duration-500 ${
-                    index === i 
-                    ? "w-10 bg-yellow-500" 
-                    : "w-2 bg-white/10 hover:bg-white/30"
-                  }`}
+                  className={`h-1.5 rounded-full transition-all duration-500 ${index === i
+                      ? "w-10 bg-yellow-500"
+                      : "w-2 bg-white/10 hover:bg-white/30"
+                    }`}
                 />
               ))}
             </div>
