@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, ShoppingBag, Grid2X2, Settings, LogOut, X } from "lucide-react";
+import { LayoutDashboard, ShoppingBag, Grid2X2, LogOut, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { createClient } from "@/utils/supabase/client";
 import { useRouter } from "next/navigation";
@@ -11,7 +11,6 @@ const items = [
   { name: "الرئيسية", href: "/admin", icon: LayoutDashboard },
   { name: "الأقسام", href: "/admin/categories", icon: Grid2X2 },
   { name: "المنتجات", href: "/admin/products", icon: ShoppingBag },
-  { name: "الإعدادات", href: "/admin/settings", icon: Settings },
 ];
 
 export default function AdminSidebar({ onMobileSelect }: { onMobileSelect?: () => void }) {
