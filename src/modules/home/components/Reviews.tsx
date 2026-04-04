@@ -58,11 +58,11 @@ export default function Reviews() {
           
           {/* Left Column: Title and Trust Indicators */}
           <motion.div
-            initial={{ opacity: 0, x: locale === "ar" ? 50 : -50 }}
+            initial={{ opacity: 0, x: locale === "ar" ? 20 : -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="lg:w-1/3 text-center lg:text-right rtl:lg:text-right ltr:lg:text-left"
+            className="lg:w-1/3 text-center lg:text-right rtl:lg:text-right ltr:lg:text-left overflow-x-hidden"
           >
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-8 font-cairo leading-tight">
               {t("title")}

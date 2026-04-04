@@ -39,7 +39,7 @@ export default async function LocaleLayout(
   const messages = await getMessages();
 
   return (
-    <div className={`${cairo.variable} ${cairo.className} min-h-screen bg-black`}>
+    <div className={`${cairo.variable} ${cairo.className} min-h-screen bg-black overflow-x-hidden`}>
       <NextIntlClientProvider messages={messages}>
         <Navbar />
         {children}
