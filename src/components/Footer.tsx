@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { MapPin, Clock, Phone, AlertTriangle } from "lucide-react";
+import { MapPin, Clock, Phone, AlertTriangle, Truck } from "lucide-react";
 import Image from "next/image";
 
 export default function Footer() {
@@ -9,7 +9,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-black text-gray-300 border-t border-white/10 relative overflow-hidden font-cairo">
+    <footer id="footer" className="bg-black text-gray-300 border-t border-white/10 relative overflow-hidden font-cairo">
       {/* Decorative Blur */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[50%] h-[200px] bg-yellow-600/5 blur-[120px] pointer-events-none" />
 
@@ -95,10 +95,24 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Notice */}
-        <div className="bg-yellow-500/10 text-yellow-300 border border-yellow-500/20 p-4 rounded-xl flex items-center justify-center gap-3 mb-10">
-          <AlertTriangle size={20} />
-          <p className="font-bold">{t("importantNotice")}</p>
+        {/* Shipping Policy and Notice */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+          <div className="bg-zinc-900/80 border border-white/5 p-6 rounded-2xl flex items-start gap-4">
+            <div className="w-12 h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center text-yellow-500 shrink-0">
+              <Truck size={24} />
+            </div>
+            <div>
+              <h5 className="font-bold text-white mb-1">{t("shippingPolicy.title")}</h5>
+              <p className="text-sm text-gray-400 leading-relaxed">{t("shippingPolicy.desc")}</p>
+            </div>
+          </div>
+
+          <div className="bg-rose-500/10 text-rose-300 border border-rose-500/20 p-6 rounded-2xl flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-500 shrink-0">
+              <AlertTriangle size={24} />
+            </div>
+            <p className="font-bold text-sm md:text-base">{t("importantNotice")}</p>
+          </div>
         </div>
 
         <div className="text-center pt-8 border-t border-white/10 text-sm opacity-60">

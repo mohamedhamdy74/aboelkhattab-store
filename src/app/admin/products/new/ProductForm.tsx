@@ -77,6 +77,7 @@ export default function ProductForm({ categories }: { categories: Category[] }) 
     formData.append("descriptionEn", (form.elements.namedItem("descriptionEn") as HTMLTextAreaElement).value);
     formData.append("categoryId",    (form.elements.namedItem("categoryId") as HTMLSelectElement).value);
     formData.append("isActive",      String((form.elements.namedItem("isActive") as HTMLInputElement).checked));
+    formData.append("isFeatured",    String((form.elements.namedItem("isFeatured") as HTMLInputElement).checked));
 
     // Main Image
     const imageFile = imageRef.current?.files?.[0];
@@ -213,11 +214,14 @@ export default function ProductForm({ categories }: { categories: Category[] }) 
 
       {/* ── حالة التفعيل ── */}
       <div className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 p-8 shadow-sm">
-        <h3 className="text-lg font-bold text-zinc-800 dark:text-zinc-100 border-b border-zinc-100 dark:border-zinc-800 pb-3 mb-6">الحالة</h3>
         <div className="flex flex-wrap gap-4">
           <label className="flex items-center gap-3 cursor-pointer p-4 bg-indigo-50 dark:bg-indigo-900/10 border border-indigo-100 dark:border-indigo-500/20 rounded-xl">
             <input name="isActive" type="checkbox" defaultChecked className="w-5 h-5 accent-indigo-600" />
             <span className="font-bold text-indigo-700 dark:text-indigo-400 select-none">المنتج نشط (يظهر للعملاء)</span>
+          </label>
+          <label className="flex items-center gap-3 cursor-pointer p-4 bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-100 dark:border-emerald-500/20 rounded-xl">
+            <input name="isFeatured" type="checkbox" className="w-5 h-5 accent-emerald-600" />
+            <span className="font-bold text-emerald-700 dark:text-emerald-400 select-none">منتج مميز (يظهر في الواجهة)</span>
           </label>
         </div>
       </div>

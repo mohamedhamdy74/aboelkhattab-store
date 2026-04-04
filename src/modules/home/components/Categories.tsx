@@ -21,7 +21,7 @@ export default function Categories({ categories }: { categories: Category[] }) {
   const locale = useLocale();
 
   return (
-    <section className="py-24 bg-zinc-950 relative overflow-hidden">
+    <section id="categories" className="py-24 bg-zinc-950 relative overflow-hidden">
       {/* Decorative stars/particles */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] mask-[radial-gradient(ellipse_at_center,black_50%,transparent_100%)]"></div>
 

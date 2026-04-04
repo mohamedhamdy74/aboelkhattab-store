@@ -38,6 +38,7 @@ export async function POST(req: NextRequest) {
       images:        galleryUrls,
       categoryId:    formData.get("categoryId") as string,
       isActive:      formData.get("isActive")   !== "false",
+      isFeatured:    formData.get("isFeatured") === "true",
       variants: variants.map((v: any) => ({
         sizeAr:    v.sizeAr,
         sizeEn:    v.sizeEn,

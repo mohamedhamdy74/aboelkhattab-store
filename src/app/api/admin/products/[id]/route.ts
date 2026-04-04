@@ -18,6 +18,7 @@ export async function PATCH(
       descriptionEn: (formData.get("descriptionEn") as string) || null,
       categoryId:    formData.get("categoryId") as string,
       isActive:      formData.get("isActive")   !== "false",
+      isFeatured:    formData.get("isFeatured") === "true",
     };
 
     // Upload new image if provided

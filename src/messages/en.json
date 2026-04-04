@@ -32,8 +32,8 @@
       }
     },
     "featured": {
-      "title": "Latest Products",
-      "subtitle": "Discover our exclusive collection of the most luxurious perfumes and Khomra crafted for you.",
+      "title": "Featured Selections",
+      "subtitle": "An exclusive collection of our finest handcrafted products.",
       "viewAll": "View All Products",
       "addToCart": "Add to Cart",
       "currency": "EGP"
@@ -108,6 +108,10 @@
           "address": "Aswan - Nasr Al Nuba - next to Nasser Social Bank - behind Teachers Syndicate.",
           "time": "10 AM to 11 PM"
         }
+      },
+      "shippingPolicy": {
+        "title": "Shipping & Delivery Policy",
+        "desc": "Delivery within 2-5 working days. Shipping costs vary by governorate and region."
       },
       "rights": "All rights reserved © {year} Abu Alkhattab Perfumes."
     }

@@ -41,6 +41,7 @@ model Product {
 
   
   isActive       Boolean          @default(true)
+  isFeatured     Boolean          @default(false)
   
   categoryId     String
   category       Category         @relation(fields: [categoryId], references: [id], onDelete: Restrict) 

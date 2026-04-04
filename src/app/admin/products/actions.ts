@@ -19,6 +19,15 @@ export async function toggleProductStatus(id: string, isActive: boolean) {
   revalidatePath("/admin/products");
 }
 
+// ─── تبديل حالة "مميز" للمنتج ─────────────────────
+export async function toggleProductFeatured(id: string, isFeatured: boolean) {
+  await prisma.product.update({
+    where: { id },
+    data: { isFeatured },
+  });
+  revalidatePath("/admin/products");
+}
+
 // ─── إنشاء منتج جديد (Called from API route) ────────
 export async function createProductInDB(data: {
   nameAr: string;
@@ -29,6 +38,7 @@ export async function createProductInDB(data: {
   images: string[];
   categoryId: string;
   isActive: boolean;
+  isFeatured: boolean;
   variants: Array<{
     sizeAr: string;
     sizeEn: string;
@@ -48,6 +58,7 @@ export async function createProductInDB(data: {
       images: data.images,
       categoryId: data.categoryId,
       isActive: data.isActive,
+      isFeatured: data.isFeatured,
       variants: {
         create: data.variants,
       },

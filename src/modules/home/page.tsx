@@ -8,14 +8,14 @@ import Reviews from "./components/Reviews";
 import { prisma } from "@/lib/prisma";
 
 export default async function HomeModule() {
-  const [categories, latestProducts] = await Promise.all([
+  const [categories, featuredProducts] = await Promise.all([
     prisma.category.findMany({
       where: { isActive: true },
       orderBy: { createdAt: 'desc' },
       take: 6,
     }),
     prisma.product.findMany({
-      where: { isActive: true },
+      where: { isActive: true, isFeatured: true },
       include: {
         category: true,
         variants: {
@@ -24,7 +24,7 @@ export default async function HomeModule() {
         }
       },
       orderBy: { createdAt: 'desc' },
-      take: 4,
+      take: 8, // Increased count to show more featured products if available
     }),
   ]);
 
@@ -32,7 +32,7 @@ export default async function HomeModule() {
     <main className="min-h-dvh bg-black w-full overflow-hidden">
       <Hero />
       <About />
-      <FeaturedProducts products={latestProducts} />
+      <FeaturedProducts products={featuredProducts} />
       <Categories categories={categories} />
       <Bridal />
       <Reviews />
