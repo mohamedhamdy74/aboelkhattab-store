@@ -27,7 +27,7 @@ export default async function ProductsModule({ searchParams }: { searchParams: {
   const [categories, products, totalProducts] = await Promise.all([
     prisma.category.findMany({
       where: { isActive: true },
-      orderBy: { createdAt: 'desc' }
+      orderBy: { createdAt: 'asc' }
     }),
     prisma.product.findMany({
       where: whereClause,
@@ -37,7 +37,7 @@ export default async function ProductsModule({ searchParams }: { searchParams: {
           orderBy: { price: 'asc' }
         }
       },
-      orderBy: { createdAt: 'desc' },
+      orderBy: { createdAt: 'asc' },
       skip,
       take: limit,
     }),

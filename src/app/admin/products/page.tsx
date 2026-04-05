@@ -37,12 +37,12 @@ export default async function ProductsPage({
         category: { select: { nameAr: true } },
         variants: true,
       },
-      orderBy: { createdAt: "desc" },
+      orderBy: { createdAt: "asc" },
       skip: (currentPage - 1) * pageSize,
       take: pageSize,
     }),
     prisma.product.count({ where }),
-    prisma.category.findMany({ select: { id: true, nameAr: true }, orderBy: { nameAr: "asc" } }),
+    prisma.category.findMany({ select: { id: true, nameAr: true }, orderBy: { createdAt: "asc" } }),
   ]);
 
   const totalPages = Math.ceil(totalCount / pageSize);

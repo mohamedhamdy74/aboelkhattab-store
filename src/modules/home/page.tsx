@@ -11,7 +11,7 @@ export default async function HomeModule() {
   const [categories, featuredProducts] = await Promise.all([
     prisma.category.findMany({
       where: { isActive: true },
-      orderBy: { createdAt: 'desc' },
+      orderBy: { createdAt: 'asc' },
       take: 6,
     }),
     prisma.product.findMany({
@@ -23,8 +23,8 @@ export default async function HomeModule() {
           take: 1
         }
       },
-      orderBy: { createdAt: 'desc' },
-      take: 8, // Increased count to show more featured products if available
+      orderBy: { createdAt: 'asc' },
+      take: 12, // Increased count for the new slider
     }),
   ]);
 

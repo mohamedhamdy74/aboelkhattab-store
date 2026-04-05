@@ -18,7 +18,7 @@ export default async function EditProductPage({
       where: { id },
       include: { variants: { orderBy: { isDefault: "desc" } } },
     }),
-    prisma.category.findMany({ orderBy: { createdAt: "desc" } }),
+    prisma.category.findMany({ orderBy: { createdAt: "asc" } }),
   ]);
 
   if (!product) notFound();
